@@ -2,7 +2,7 @@
 ### **RoomDatabase** kütüphanesini öğrenebilmek için geliştirdiğim Java ile yapılmış bir uygulamadır. 
 Beğendiğiniz kitap alıntılarını **RoomDatabase**'e kayıt edebileceğiniz bir uygulamadır.  
 
-** RoomDatabase**'den ayrıca başka bir Jetpack üyesi olan Navigation kullanılmıştır.
+**RoomDatabase**'den ayrıca başka bir Jetpack üyesi olan Navigation kullanılmıştır.
 
 # Özellikler 
 * Kitap ekleyebilirsiniz. 
