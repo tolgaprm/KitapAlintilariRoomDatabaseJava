@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/bookListFragment">
+
+    <fragment
+        android:id="@+id/bookListFragment"
+        android:name="com.tolgapirim.kitapalintilariroom.fragments.BookListFragment"
+        android:label="Kitaplar"
+        tools:layout="@layout/fragment_book_list" >
+        <action
+            android:id="@+id/action_bookListFragment_to_addBookFragment"
+            app:destination="@id/addBookFragment" />
+        <action
+            android:id="@+id/action_bookListFragment_to_quotationFragment"
+            app:destination="@id/quotationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBookFragment"
+        android:name="com.tolgapirim.kitapalintilariroom.fragments.AddBookFragment"
+        android:label="Kitap Ekle" >
+        <action
+            android:id="@+id/action_addBookFragment_to_bookListFragment"
+            app:destination="@id/bookListFragment"
+            app:popUpTo="@id/bookListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/quotationFragment"
+        android:name="com.tolgapirim.kitapalintilariroom.fragments.QuotationFragment"
+        android:label="Alıntılar"
+        tools:layout="@layout/fragment_quotation"
+        >
+        <argument
+            android:name="bookName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_quotationFragment_to_addQuotationFragment"
+            app:destination="@id/addQuotationFragment" />
+        <argument
+            android:name="authorName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addQuotationFragment"
+        android:name="com.tolgapirim.kitapalintilariroom.fragments.AddQuotationFragment"
+        android:label="Alıntı Ekle" >
+        <argument
+            android:name="bookName"
+            app:argType="string" />
+        <argument
+            android:name="authorName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_addQuotationFragment_to_quotationFragment"
+            app:destination="@id/quotationFragment"
+            app:popUpTo="@id/quotationFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
